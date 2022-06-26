@@ -23,7 +23,7 @@ const messages = defineMessages({
   },
 });
 
-const HomePage = () => {
+const NewHomePage = () => {
   const { formatMessage } = useIntl();
   return (
     <Page
@@ -44,7 +44,7 @@ const HomePage = () => {
   );
 };
 
-HomePage.getInitialProps = ({ req, res }) => {
+NewHomePage.getInitialProps = ({ req, res }) => {
   if (res && req && (req.language || req.locale === 'en')) {
     res.set('Cache-Control', 'public, s-maxage=3600');
   }
@@ -59,4 +59,4 @@ HomePage.getInitialProps = ({ req, res }) => {
   return { skipDataFromTree };
 };
 
-export default HomePage;
+export default NewHomePage;
